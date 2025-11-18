@@ -26,6 +26,14 @@ MIRYOKU_LAYER_LIST
   };
 };
 
+lpm_view_spi: &spi2 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi2_default>;
+    pinctrl-1 = <&spi2_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
+};
+
 #include "miryoku_shift_functions.dtsi"
 
 #include "miryoku_double_tap_guard.dtsi"
